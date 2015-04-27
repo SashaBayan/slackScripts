@@ -27,9 +27,12 @@ story3="I am the one who knocks."
 #counter to be incremented in concert with the names array
 j=0
 
+SLACKURL=""
+
 post(){
   #1.channel, 2.username, 3.emoji, 4.text
-  curl -X POST --data-urlencode "payload={\"channel\": \"$1\", \"username\": \"$2\", \"text\": \"$4\", \"icon_emoji\": \"$3\"}" https://hooks.slack.com/services/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
+  #Grab SLACKURL from config
+  curl -X POST --data-urlencode "payload={\"channel\": \"$1\", \"username\": \"$2\", \"text\": \"$4\", \"icon_emoji\": \"$3\"}" $SLACKURL
 }
 
 narratorPost(){
