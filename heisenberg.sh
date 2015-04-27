@@ -14,6 +14,8 @@ target="<@peterkim>";
 #change to hr23andme when ready
 channel=#shmoosh;
 
+SLACKURL="https://hooks.slack.com/services/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"
+
 story1a="<!everyone> The most common phrase in the Tenderloin has for years been: 'Hide your wife, hide your kids... from Fingah Peet.'"
 
 story1b="<!everyone> Fingah Peet has been terrorizing the people of the TL for decades. How many unsuspecting, innocent people have been flipped the bird by this mad man? How many promising lives have been ruined by his villainy?"
@@ -32,7 +34,7 @@ SLACKURL=""
 post(){
   #1.channel, 2.username, 3.emoji, 4.text
   #Grab SLACKURL from config
-  curl -X POST --data-urlencode "payload={\"channel\": \"$1\", \"username\": \"$2\", \"text\": \"$4\", \"icon_emoji\": \"$3\"}" $SLACKURL
+  curl -X POST --data-urlencode "payload={\"channel\": \"$1\", \"username\": \"$2\", \"text\": \"$4\", \"icon_emoji\": \"$3\"}" "$SLACKURL"
 }
 
 narratorPost(){
