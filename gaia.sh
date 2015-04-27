@@ -13,7 +13,7 @@ emojis=(:bowtie: :smile: :laughing: :blush: :smiley: :relaxed: :smirk: :heart_ey
 post(){
   #1.channel, 2.username, 3.emoji, 4.text
   #Grab SLACKURL from config
-  curl -X POST --data-urlencode "payload={\"channel\": \"$1\", \"username\": \"$2\", \"text\": \"$4\", \"icon_emoji\": \"$3\"}" $SLACKURL
+  curl -X POST --data-urlencode "payload={\"channel\": \"$1\", \"username\": \"$2\", \"text\": \"$4\", \"icon_emoji\": \"$3\"}" https://hooks.slack.com/services/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
 }
 
 userPost(){
@@ -23,11 +23,10 @@ userPost(){
 
 k=1
 
-names="Gaia's children $k"
-text="hey $target, :fu:"
-
 for i in "${emojis[@]}"
   do
+    names="Gaia's children $k"
+    text="hey $target, :fu:"
     userPost "$names" "$i" "$text"
     ((k++))
   done
