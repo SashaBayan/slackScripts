@@ -38,24 +38,23 @@ narratorPost(){
 
 userPost(){
   #1.username, 2.emoji, 3.text
-  post $channel $1 $2 $3
-  # curl -X POST --data-urlencode "payload={\"channel\": \"$channel\", \"username\": \"${hr23_names[$j]}\", \"text\": \"hey $peter, :fu:\", \"icon_emoji\": \"$i\"}" https://hooks.slack.com/services/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
+  post $channel $1 $2 "$3"
 }
 
-# Heisenberg opening
+### Heisenberg opening
 
-# narratorPost "$story1a"
-# sleep 3;
-# narratorPost "$story1b"
-# sleep 4;
-# narratorPost "$story1c"
-# sleep 4;
-# narratorPost "$story2"
-# sleep 5;
-# narratorPost "$story3"
-# sleep 5;
+narratorPost "$story1a"
+sleep 3;
+narratorPost "$story1b"
+sleep 4;
+narratorPost "$story1c"
+sleep 4;
+narratorPost "$story2"
+sleep 5;
+narratorPost "$story3"
+sleep 5;
 
-##################hr23 ########################
+### HR23
 text="hey $target, :fu:"
 
 for i in "${hr23_emojis[@]}"
@@ -67,9 +66,7 @@ do
   sleep 1;
 done
 
-# Heisenberg closing
-narratorPost "(hey $target)"
-
-   # curl -X POST --data-urlencode "payload={\"channel\": \"$channel\", \"username\": \"Heisenberg\", \"text\": \"hey $peter\", \"icon_emoji\": \"$narrator_emoji\"}" https://hooks.slack.com/services/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
-   # sleep 3;
-   # curl -X POST --data-urlencode "payload={\"channel\": \"$channel\", \"username\": \"Heisenberg\", \"text\": \"i won\", \"icon_emoji\": \"$narrator_emoji\"}" https://hooks.slack.com/services/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
+### Heisenberg closing
+narratorPost "hey $target"
+sleep 3;
+narratorPost "I won"
