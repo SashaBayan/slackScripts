@@ -1,10 +1,8 @@
-target="<@peterkim>"
-
-story1a="$target has blasphemed against your Mother, the One Who has lovingly watched over you and your code."
-
-story1b="Today Gaia shall withdraw Her love and mercy from this blasphemer."
+target="<!everyone>"
 
 channel=#shmoosh
+
+SLACKURL=""
 
 ############## #list of emojis #######################
 
@@ -13,7 +11,7 @@ emojis=(:bowtie: :smile: :laughing: :blush: :smiley: :relaxed: :smirk: :heart_ey
 post(){
   #1.channel, 2.username, 3.emoji, 4.text
   #Grab SLACKURL from config
-  curl -X POST --data-urlencode "payload={\"channel\": \"$1\", \"username\": \"$2\", \"text\": \"$4\", \"icon_emoji\": \"$3\"}" $SLACKURL
+  curl -X POST --data-urlencode "payload={\"channel\": \"$1\", \"username\": \"$2\", \"text\": \"$4\", \"icon_emoji\": \"$3\"}" 
 }
 
 userPost(){
@@ -26,8 +24,7 @@ k=1
 for i in "${emojis[@]}"
   do
     names="Gaia's children $k"
-    text="hey $target, :fu:"
+    text="hey $target, Gaia loves you :heart:"
     userPost "$names" "$i" "$text"
     ((k++))
   done
-
